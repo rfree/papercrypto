@@ -1,0 +1,194 @@
+This is the perfect (impossible to break it without password) code.
+- can't be broken without obtaining the password, because it's one-time password, as long as the message
+- can be coded/decoded with no electronical devices, with pen and paper
+- uses special shortcuts and codes
+
+
+
+=======================================================================
+=======================================================================
+THE ENCRYPTION SYSTEM
+
+Code is one time pad.
+
+It's like simple shift code (rot), but it uses other rotation amount for EACH CHARACTER which turns such code
+from totally worthless into absolutelly unbreakable (by any analysis of the crypto text).
+
+Encode: B+D -> E,  Decode: E-D -> B
+B is clear text,
+D is pad (in this position)
+E is encrypted text (that can be send over computers, internet, etc)
+E is again received encrypted
+D is again pad (a copy that recipient had pre-shared over secure channel - in person)
+B is decoded clear text
+
+Text example:
+Text="Hello", Pad="ACDBF":
+
+"Hello" + "ACDBF" = ....
+.....   - "ACDBF" = "Hello"
+@TODO
+
+Alphabet used has 48 characters:
+
+ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:
+
+=======================================================================
+=======================================================================
+THE SHORTCUTS SYSTEM
+Examples:
+
+journalists reporting from war front can send following CLEAR text (just using shortcuts)
+"IDCAN/GET/REPORTP^^" - means: "urgent: all is going good. yes we can get this report done. Just waiting your confirmation."
+"EJHE/WILL/LEAVER^^" - means: "immediate: all is good, but: he will leave. We should do it! Just awaiting your confirmation!"
+
+u-boot captain (clear text examples):
+1) "FAFUEL/HAS/LOW/EFFIC?^^" 
+2) "IWFUEL/WILL/RUN/IN/50/N.M./RDVZ/W/BISMARCK/$G53.9704,5.6603/F^^"
+3) "EZCAPTURED@^^"
+
+1) means: urgent: I suspect that: (good, but we have a considaration that...) fuel has low efficiency. Please reply"
+2) means: Asap, I am sure that: (we have a problem, sorry my fault) fuel will run in 50 n.m. Randveouz with Bismarck geolocation 53.9704,5.6603. 
+Do it soon. Awaiting your reply. We are also working on it / doing something about it.
+3) means: Immediate, I'm sure that: (trouble) caputred. Tell everyone. Might be unable to communicate.
+
+
+more urgent (afar waiting for reply maybe):
+E J "HE/WILL/LEAVE/SOON/MUST/REPORT/NOW" R^^
+EJHE/WILL/LEAVE/SOON/MUST/REPORT/NOWR^^
+EJHE/WILL/LEAVER^^ -> "he will leave" + contex = "he will leave [soon!] [we must must do it!] awaiting your confirmation!"
+
+business:
+NLWE/BUY/CARS/1000/PIECE/IN/NOV+^^
+means:
+We should do it really at some point: I want to offer/invite you to something very interesting: we buy cars 1000 piece in nov. I invite you and await your reply.
+
+Message format is:
+1 character, 1 character, N characters, 1 character, 2 characters "^^" with meaning:
+(mode) (tone) (main body) (ending-type)^^ so for example:
+(urgent, I am sure) (all is going good :) "yes we can get this report done" (just waiting your confirmation) 
+will be encoded as:
+I D "YES/WE/CAN/GET/REPORT/DONE" P^^
+using the tables below to find meaning of symbols I,D, and P^^.
+
+IDYES/WE/CAN/GET/REPORT/DONEP^^
+more urgent (afar waiting for reply maybe):
+E J "HE/WILL/LEAVE/SOON/MUST/REPORT/NOW" R^^
+EJHE/WILL/LEAVE/SOON/MUST/REPORT/NOWR^^
+EJHE/WILL/LEAVER^^ -> "he will leave" + contex = "he will leave [soon!] [we must must do it!] awaiting your confirmation!"
+
+
+
+Use case (historical needs for crypto and current events):
+- journalists reporting events to HQ:
+- whistleblower reporting: police corruption, being compromised, being framed, 
+- various war officers
+- U-boot officers - reporting position, reporting damage, reporting request for resupply :)
+- banking secrets - robbers..
+- USA funding fathers - 
+- boy-scouts against occupant army - supply location...
+
+
+
+In general text:
+
+. is used to end sentance or as dot
+/ is used as space
+^ before letter means upper-case latter
+* can mean shortcut
+
+
+First 2 characters mean message type/tone:
+
+EWU/HAVE/BAD/FUEL^^
+Immediate! I am very sure; Bad situation, sorry; Have bad fuel.
+Urgent warning that uboot took wrong fuel at the port.
+
+urgent: [4] -1,0,1,+1 low..normal..high..immediate
+being sure/please do it/you must:  -2,-1(not so sure),0(normal),1(please),2(must),3(absolutelly!)
+
+A - immediate! I suspect that...
+B - immediate! I have some small doublt, but probably... / a suggestion   -- I think that we loaded wrong fuel at the port
+C - immediate! Normal information: From what I know / I think that...
+D - immediate! I am sure! We should do it now, please do it quickly!
+E - immediate! I am very sure! We MUST absolutelly do it now!
+
+F - asap. I suspect that...
+G - asap. I have some small doublt, but probably... / a suggestion
+H - asap. Normal information: From what I know / I think that...
+I - asap. I am sure. We should do it really soon if you can, please do it soon.
+J - asap. I am very sure! We MUST do it really soon.
+
+K - normal. I suspect that...
+L - normal. I have some small doublt, but probably... / a suggestion
+M - normal. Normal information: From what I know / I think that...
+N - normal. I am sure. We should do it really at some point.
+O - normal. I am very sure! We MUST do it at some point.
+
+K - low-priority. I suspect that...
+L - low-priority. I have some small doublt, but probably... / a suggestion
+M - low-priority. Normal information: From what I know / I think that...
+N - low-priority. I am sure. We should do it really - one day in future.
+O - low-priority. I am very sure! We MUST do it - one day in future.
+
+
+Tone of the text:
+A - small problems possible (a bit worried)
+B - (neutral), ok, confirm
+C - good :)
+D - good :) thank you :)
+E - good :) after all / despite problems / thanks to me
+F - good, though some problem or consideration
+G - all very good :D
+H - all very good :D thank you :D
+I - all very good :D after all / despite problems / thanks to me
+J - all very good :D, though some problem or consideration
+K - I want to offer/invite you to something 
+L - I want to offer/invite you to something very interesting :)
+M - mixed (good and bad)
+O - yes, agreed, ready
+P - no, not ready, disagreed
+R - no, not ready, disagreed - sorry/appologize
+S - no, not ready, disagreed - maybe letter
+W - bad situation - sorry (my/our fault) :(
+X - bad situation - angry (at you) :(
+Y - bad situation - angry (not at you) :(
+Z - bad situation - :(
+1 - tretchery
+2 - tretchery by someone we (probably both) trusted
+3 - technical compromise
+? - I do not understand what you mean / what is the situation
++ - I appologize / please let's agree on something
+
+Next letter is if speciall characeter then has meaning:
+! - update, errata, instead of previous message:
+* - continuation of previous message, append to previous message
+
+$g - geo location
+$p - pgp/gnupg key information. $P1234ABCD/ means "pgp key 0x1234ABCD "
+$b - bitcoin etc address. $B1^Y^ABUP54/ means "bitcoin address [starting with] 1YAbup54
+$k - KSK@ key. $B$KRND5858 means "bitcoin adddress that can be found in KSK@rnd5858" {remember that this information will show cleartext bitcoin address on computer; though using bitcoin will probably require one anyway}
+
+Ending texts, the last 3 characters at end of message (before ^^) have speciall meaning:
+
+^^^ - normal end of communication, communication channel open.
+.^^ - normal end of communication, I consider this matter closed/done.
+?^^ - please reply
+!^^ - please reply soon
++^^ - I invite you and await your reply {business, polite}
+A^^ - if you want please do <as we discussed>, if you want contact me
+B^^ - please do <as we discussed>, awaiting your reply when you are ready
+C^^ - please! do <as we discussed>, awaiting your soon reply asap
+D^^ - if you want please do <as we discussed>, if you want contact me - I work on it too
+E^^ - please do <as we discussed>, awaiting your reply when you are ready - I work on it too
+F^^ - please! do <as we discussed>, awaiting your soon reply asap - I work on it too
+J^^ - I will continue
+K^^ - I will take care about it
+L^^ - I will take care about it all, do not worry
+M^^ - Let's together work on it
+P^^ - I can do it, awaiting your confirmation/authorization
+R^^ - I think we should do it quickly, just awaiting your confirmation
+=^^ - please take care about it for me, do everything needed, let everyone know
+@^^ - please take care about it for me, do everything needed, let everyone know, I might have trouble communicating
+
+
