@@ -46,7 +46,8 @@ int main ()
 
 
 	if (1)
-	{
+	{ // table for 6 + 8 dice random 48 number generation
+
 		int nr=0;
 		cout << "\nRandom 6*8 table:" << endl;
 
@@ -75,7 +76,7 @@ int main ()
 	
 
 
-	{
+	{ // table of code/decode
 		int nr=0;
 		cout << "\n the ROT table:" << endl;
 
@@ -92,8 +93,12 @@ cout<<endl;
 			char c=alpha.at(y);
 			cout << c<<c<<c <<"->┊";
 
+			bool do_decode=1;
+
 			for (int x=0; x<S; ++x) {
-				int nr = (x+y)%S;
+				int nr; 
+				if (!do_decode) nr = (x+y)%S; // <--- encoding
+				else { nr = x-y; if (nr<0) nr+=S; }
 				cout << alpha.at(nr) << "┊";
 				// ║┊
 			}
