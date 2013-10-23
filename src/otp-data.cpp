@@ -176,7 +176,7 @@ void menu ()
 
 	switch (dec)
 	{
-		case 1: cout << "Ain't ready yet" <<endl;/*base();*/ break;
+		case 1: base(); break;
 		case 2: cout << "Ain't ready yet" <<endl;/*coding_print();*/ break;
 		case 3: cout << "Ain't ready yet" <<endl;/*decoding_print();*/ break;
 		case 4: cout << "Ain't ready yet" <<endl;/*enc_menu();*/ break;
@@ -185,7 +185,37 @@ void menu ()
 	}
 }
 
-void menu ();
-void base ();
+void base ()
+{
+	cout << "Begining of printing basic table which contains 6x8 signs." << endl
+	<< "Used for random PAD generator" << endl;
+	string alpha="";
+	alpha = "ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:"; // XXX
+	int nr=0;
+                cout <<endl<< "Random 6*8 table:" << endl;
+
+                int nrBig=1; // the 1..8 dice
+
+                cout << " |";         for (int x=1; x<=6; ++x) cout << x << (x<=6 ? "|" : " "); // header
+                cout << endl;
+                while (nr<alpha.size()) {
+
+                        cout << nrBig <<"->|";
+
+                        for (int x=1; x<=6; ++x) {
+                                cout << alpha.at(nr) << (x<=6 ? "|" : " ");
+                                ++nr;
+                        }
+                        cout << endl;
+
+                        if ((0==(nrBig%4)) && (nrBig<7)) { cout<<" |";
+                                for(int x=1; x<=6; ++x) { cout<<"-|"; }
+                                cout << endl;
+                        }
+
+                        ++nrBig;
+                }
+}
+
 void coding_print(); 
 void decoding_print();
