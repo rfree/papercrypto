@@ -13,9 +13,13 @@ void decoding_print();
 /*void enc_menu();
 void dec_menu(); */
 
+const std::string gProgramName = "Paper-Crypto";
+const std::string gProgramVersion = "0.1wip";
+
 using namespace std;
 int main ()
 {
+	cout << "Wellcome to " << gProgramName << " version " << gProgramVersion << endl;
         char a='a', z='z';
         
 
