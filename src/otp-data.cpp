@@ -36,7 +36,7 @@ int main ()
 	string alphatest="";
         for (char i='A'; i<='Z'; ++i) 
 	{ 
-		char cs[2];
+		char cs[2]; // TODO switch to stirng(c,1) method -rfreeman
 		switch (i)	
 		{
 			case 'I': cs[0]='i'; cs[1]='\0'; alphatest += string(cs); break;
@@ -45,7 +45,7 @@ int main ()
 		} 
 	}
 
-        for (int i=0; i<=9; ++i) { char cs[2]; cs[0]='0'+i; cs[1]='\0'; alphatest += string(cs); }
+        for (int i=0; i<=9; ++i) { char c; c='0'+i; alphatest += string(1,c); }
         for (int i=0; i<chars.size(); ++i) { alphatest += chars.at(i); }
 
         alpha = "ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:"; // XXX
