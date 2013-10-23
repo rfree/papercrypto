@@ -21,7 +21,7 @@ string gen (size_t _mess)
 	for (int i = 0; i<_mess; i++) 
 	{
 		
-		cout << rand() % _mess <<" <---totally random " << i << " number"<< endl;
+		cout << rand() % 48 <<" <---totally random " << i << " number"<< endl;
 	}
 
 	return "asdqwe";
