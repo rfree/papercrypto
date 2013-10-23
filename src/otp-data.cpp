@@ -57,9 +57,9 @@ int main ()
 	}
 
         for (int i=0; i<=9; ++i) { char c; c='0'+i; alphatest += string(1,c); }
-        for (int i=0; i<chars.size(); ++i) { alphatest += chars.at(i); }
+        for (int i=0; i<chars.size(); ++i) { alphatest += chars.at(i); } // speciall characters
 
-        alpha = "ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:"; // XXX
+        alpha = "ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:"; // this is the expected standarized alphabet
 //        alpha = "ABCD" ;
 
 
