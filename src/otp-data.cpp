@@ -3,10 +3,20 @@
 #include <iostream>
 #include <string>
 
+//ready
+void menu ();
+void base ();
+void coding_print(); 
+void decoding_print();
+//Not ready yet
+/*void enc_menu();
+void dec_menu(); */
+
+using namespace std;
 int main ()
 {
         char a='a', z='z';
-        using namespace std;
+        
 
         string chars = string("^?!.*+-/=@$:");
         /*
@@ -142,3 +152,30 @@ int main ()
 
 
 }
+
+void menu ()
+{
+	cout << "What you want to do?" << endl
+	<< "1 - Print 6x8 char table" << endl
+	<< "2 - Print coding table" << endl
+	<< "3 - Print decoding table" << endl
+	<< "4 - Encode message" << endl
+	<< "5 - Decode message" << endl;
+
+	int dec;
+
+	switch (dec)
+	{
+		case 1: cout << "Ain't ready yet" <<endl;/*base();*/ break;
+		case 2: cout << "Ain't ready yet" <<endl;/*coding_print();*/ break;
+		case 3: cout << "Ain't ready yet" <<endl;/*decoding_print();*/ break;
+		case 4: cout << "Ain't ready yet" <<endl;/*enc_menu();*/ break;
+		case 5: cout << "Ain't ready yet" <<endl;/*dec_menu();*/ break;
+		default: cout <<"random number was picked"<<endl; break;
+	}
+}
+
+void menu ();
+void base ();
+void coding_print(); 
+void decoding_print();
