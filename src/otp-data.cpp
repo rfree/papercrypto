@@ -2,6 +2,7 @@
 #include <stdlib.h> /* getenv */
 #include <iostream>
 #include <string>
+#include <stdexcept>
 
 int main ()
 {
@@ -56,6 +57,11 @@ int main ()
         cout << alpha << endl;
 	cout << alphatest.size() << endl;
 	cout << alphatest << endl;
+	if (alpha != alphatest) {
+		cerr << "Warning, alphabet is not matching." << endl;
+		throw std::runtime_error("Assert");
+	}
+
 	cout << "Do you want to see 6+8 dice coding table?(y/n)" << endl;
 	string dec;
 	getline(cin,dec);
