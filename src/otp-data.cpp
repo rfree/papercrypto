@@ -8,20 +8,21 @@
 using namespace std;
 
 //ready
-void alpha_test();
-void menu ();
-void base ();
-void coding_print(); 
-void decoding_print();
-string gen (size_t _mess);
-void enc_menu();
-void dec_menu(); 
+void alpha_test(); // simple alphabet testing
+void menu ();	// main menu of program
+void base ();	// basic table to manually generate pad with 1k6 and 1k8 dices
+void coding_print(); //printing coding table
+void decoding_print();	//printing decoding table
+string gen (size_t _mess);//random pad generator
+void enc_menu();	//encoding function
+void dec_menu(); 	//decoding menu
 
+//VARIABLES
 const string gProgramName = "Paper-Crypto";
 const string gProgramVersion = "0.1wip";
 const string alpha = "ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:";
 
-
+// MAIN
 int main ()
 {
 	srand (time(NULL));
@@ -30,6 +31,20 @@ int main ()
         
 	menu ();
 }
+
+
+
+//       WARNING!!! ALL FUNCTIONS ABOVE
+
+
+
+
+
+
+
+
+
+
 
 void alpha_test()
 {
@@ -87,7 +102,7 @@ void alpha_test()
 
 void menu ()
 {	
-	string rerun;
+	string rerun; //decide looping variable
 
 	do
 	{
@@ -225,9 +240,9 @@ void decoding_print()
 string gen (size_t _mess)
 {
 	string pad ="";
-	for (int ipad = 0; ipad <_mess; ipad++) pad += (alpha.at(rand()%48));        // ║┊
+	for (int ipad = 0; ipad <_mess; ipad++) pad += (alpha.at(rand()%48));       
 			
-	cout << pad <<" <---totally random pad"<< endl;
+	//cout << pad <<" <---totally random pad"<< endl;  <---testing random pad look
 
 	return pad;
 	
@@ -235,8 +250,8 @@ string gen (size_t _mess)
 
 void enc_menu()
 {
-	string mess, dec, mess_u;
-	string pad, less, coded;
+	string mess, dec, mess_u; //mess - message to cipher, dec - decision to make, mess_u - for normal looking message generator
+	string pad, less, coded; //pad - secret code for operation, less - if too less characters in handmade pad, coded - coded message
 	
 	cout << "Write your message to code with capital letters (I=i, O=o): ";
 	getline (std::cin, mess);
@@ -279,35 +294,37 @@ void enc_menu()
 	for (int i = 0; i < mess.length(); i++)
 	{
 		
-		coded += alpha.at((alpha.find(mess.at(i), 0)+ alpha.find(pad.at(i), 0)) % alpha.size());
-		cout << "Position of message letter in alphabet is: "<< alpha.find (mess.at(i), 0)<<endl;
+		coded += alpha.at((alpha.find(mess.at(i), 0)+ alpha.find(pad.at(i), 0)) % alpha.size()); //coding message
+		/*cout << "Position of message letter in alphabet is: "<< alpha.find (mess.at(i), 0)<<endl;
 		cout << "Position of pad letter in alphabet is: "<< alpha.find (pad.at(i), 0)<<endl;
-		cout << "position of encrypted letter in alphabet is: " << alpha.find(mess.at(i), 0)+ alpha.find(pad.at(i), 0) % alpha.size() << endl;
+		cout << "position of encrypted letter in alphabet is: " << alpha.find(mess.at(i), 0)+ alpha.find(pad.at(i), 0) % alpha.size() << endl;*/ //<---Debugging message for position in alphabet for each letter
 		//cout << coded << endl;
 	}
 	for (int i=0; i<mess.length();i++)
-			cout << mess.at(i) << " " << pad.at(i) << " " << coded.at(i) << endl;
+			cout << mess.at(i) << " " << pad.at(i) << " " << coded.at(i) << endl; //printing singe under sign whole message, pad and coded message
 }
 
 void dec_menu()
 {	
-	string enc_mess, pad, mess;
+	string enc_mess, pad, mess; // enc_mess - encrypted message, pad, mess - decoded message
 	
-	enc_mess = pad = mess ="";
-	cout << "Starting decoding of message!!" << endl
-	<< "Please write your encrypted message: ";
-	getline(std::cin, enc_mess);
-	cout << "Please write your pad: ";
-	getline(std::cin, pad);
-
-	if (enc_mess.length() != pad.length()) cout << "Message or pad are invalid! Please write them again!" << endl; //make getlineing loop for invalid pad/message
+	enc_mess = pad = mess =""; //just to be sure that it's empty string
+	cout << "Starting decoding of message!!" << endl;
+	do
+	{		
+		cout << "Please write your encrypted message: ";
+		getline(std::cin, enc_mess);
+		cout << "Please write your pad: ";
+		getline(std::cin, pad);
+	if (enc_mess.length() != pad.length()) cout << "Message or pad are invalid! Please write them again!" << endl; //error message
+	}while (enc_mess.length() != pad.length()) //checking length of strings
 	
-	for (int i = 0; i < pad.length(); i++)
+	for (int i = 0; i < pad.length(); i++) //decoding loop
 	{	
 		int num = alpha.find(enc_mess.at(i), 0)- alpha.find(pad.at(i), 0);
 		if (num < 0) num += alpha.length();
 		mess += alpha.at(num);
 	}
-	cout << "Decoded message is: " << mess << endl;
+	cout << "Decoded message is: " << mess << endl; //result
 		
 }
