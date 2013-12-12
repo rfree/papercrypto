@@ -29,6 +29,7 @@ class cOTP {
 		void enc_menu();	//encryption menu
 		void dec_menu(); 	//decoding menu 
 		string dec(string,string); 
+		string get_mess();
 		
 	
 	
