@@ -6,11 +6,64 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
 	<meta name="Author" content="Autor strony" />
 	<title>Banner</title>
+<style>
+body{ 
+background-image: url(grafika/bckgrnd_title_menu-02.svg);
+background-size: 100%;
+background-repeat: no-repeat;
+background-position: top;
+}
+#mainmenu, #mainmenu ul {list-style: none; margin: 0; padding: 0;}
+#mainmenu ul {width: 160px;}
+#mainmenu ul li {clear: both;}
+#mainmenu > li {float: left; margin-right: 10px; position: relative;}
+#mainmenu > li li {position: relative;}
+#mainmenu > li ul {position: absolute; left: 0;}
+#mainmenu > li ul li ul {position: absolute; left: 160px; top: 0px;}
+ul ul {display: none;}
+ul li:hover > ul {display: block;}
+
+/*POZIOM 1*/
+#mainmenu {margin: 10px 50px; font-family: calibri; tahoma, arial;}
+#mainmenu > li > a {display: table; width: auto; padding: 8px; border-radius: 3px; text-align: center; text-decoration: none; color: #84c5f7;}
+#mainmenu > li:hover > a {background: #eee; color: #0090ff;}
+
+/*POZIOMY NIŻSZE*/
+#mainmenu ul {font-size: 12px; border-radius: 3px; background: #eee;}
+#mainmenu ul li > a {color: #999; display: block; padding: 5px; border-radius: 3px; text-decoration: none;}
+#mainmenu ul li:hover > a {color: #eee; background: #aaa;}
+
+.arrow {display: inline-block; margin: 0 5px 0; height: 0; vertical-align: top; content: ""; position: absolute;}
+#mainmenu > li > a > .arrow {top: 17px; right: 0; margin-right: -8px; border-top: 3px solid #333; border-right: 3px solid transparent; border-left: 3px solid transparent;}
+ul ul .arrow {top: 10px; right: 0; border-top: 3px solid transparent; border-right: 3px solid transparent; border-left: 3px solid #333; border-bottom: 3px solid transparent;}
+</style>
 </head>
 
 <body>
 
-<center><img width=51% src="grafika/feather_key_dark.png"></center>
+<center><img width=50% src="grafika/feather_key_dark.png"></center>
+<center><table><tr><td>
+<ul id="mainmenu">
+	<li><a href="#"><img src="grafika/buttony/home_link-01.png"></a></li>
+	<li><a href="#"><img src="grafika/buttony/history_link_OTP History.png"></a></li>
+	<li><a href="#"><img src="grafika/buttony/about_link_About OTP.png"></a></li>
+	<li><a href="#"><img src="grafika/buttony/how_link_How it works-.png"><i class="arrow"></i></a>
+		<ul>
+			<li><a href="#"><img src="grafika/buttony/example_1_link_Example 1.png"></a></li>
+			<li><a href="#"><img src="grafika/buttony/example_2_link_Example 2.png"></a></li>
+			<li><a href="#"><img src="grafika/buttony/example_3_link_Example 3.png"></a></li>
+			<li><a href="#"><img src="grafika/buttony/example_4_link_Example 4.png"></a></li>
+		</ul>
+	</li>
+	<li><a href="#"><img src="grafika/buttony/program_link_Program.png"><i class="arrow"></i></a>
+		<ul>
+			<li><a href="#"><img src="grafika/buttony/download_link_Download.png"></a></li>
+			<li><a href="#"><img src="grafika/buttony/manual_link_Manual.png"></a>
+			</li>
+		</ul>
+	</li>
+</ul>
+</td></tr></table></center>
 
 </body>
 </html>
