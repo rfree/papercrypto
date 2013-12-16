@@ -1,10 +1,18 @@
-This is the perfect (impossible to break it without password) code.
+
+Here we describe Paper Crypto OTP (one time pad).
+
+This is the perfect (impossible to break it without password) encryption protocol that 
+allows 2 people to contact eachother in most secure as possible way, that:
 1) can't be broken, because it's one-time password as long as the message
 2) can be coded/decoded with no electronical devices, with pen and paper - no backdoors
-3) uses special shortcuts and codes to be short
+3) uses special shortcuts and codes to be shorter (quicker to encode/decode)
 
-Encryption is: a+b=c. Decryption is: c-b=a. 
+Encryption formula is trivial: a+b=c. Decryption is: c-b=a.
 a=plain text, b=password (one-time pad "password" pre-shared), c=cypher text.
+e.g. number "1984" with pad "0613" encodes to "1597" (add each digit
+separatelly, ignore overflows) and 1597 - 0613 = 1984.
+
+In practice we use not digits, but alphabet of e.g. 48 characters:
 
 Alphabet(type48): ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:
 Entropy source for onetime pad: 6dice * 8dice, or 6dice*coin*coin*coin
@@ -37,6 +45,7 @@ Text="Hello", Pad="ACDBF":
 Alphabet used has 48 characters:
 
 ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:
+
 
 =======================================================================
 =======================================================================
@@ -89,12 +98,18 @@ Use case (historical needs for crypto and current events):
 - whistleblower reporting: police corruption, being compromised, being framed, 
 - various war officers
 - U-boot officers - reporting position, reporting damage, reporting request for resupply :)
-- banking secrets - robbers..
-- USA funding fathers - 
+- banking secrets - e.g. scheduel of convoy with gold/paper money
+- USA funding fathers - could organize this way if their long-distance communication would be intercepted
+- software developer forced by totalitarian regime to backdoor his software and be quiet about it (e.g. the "gag-order" in UK)
 - boy-scouts against occupant army - supply location...
 
+<start> <main-text> <end>
+
+start is usually 2 characters, sometimes more
+end is usually 3 characters
 
 
+=== GENERAL TEXT ===
 In general text:
 
 . is used to end sentance or as dot
@@ -102,40 +117,56 @@ In general text:
 ^ before letter means upper-case latter
 * can mean shortcut
 
+=== START TEXT ====
 
-First 2 characters mean message type/tone:
+First 2 characters mean message type/tone, you read their meaning from tables below.
+In example 2 characters "EW" eans "Immediate! I am very sure; Bad situation, sorry;"
 
-EWU/HAVE/BAD/FUEL^^
-Immediate! I am very sure; Bad situation, sorry; Have bad fuel.
-Urgent warning that uboot took wrong fuel at the port.
+Some examples (look at first 2 chars)
+EWU/HAVE/BAD/FUEL - 
+
+So "EWU/HAVE/BAD/FUEL^^" means.
+"Immediate! I am very sure; Bad situation, sorry; U have bad fuel."
+U being common shortcut for You. 
+Therefore it is urgent warning that uboot took wrong fuel at the port.
+
+Letter 1 encodes usually how URGENT is the message.
+Letter 2 encodes usually how SURE you are
 
 urgent: [4] -1,0,1,+1 low..normal..high..immediate
 being sure/please do it/you must:  -2,-1(not so sure),0(normal),1(please),2(must),3(absolutelly!)
 
 A - immediate! I suspect that...
-B - immediate! I have some small doublt, but probably... / a suggestion   -- I think that we loaded wrong fuel at the port
+B - immediate! I have some small doubt, but probably... / a suggestion   
 C - immediate! Normal information: From what I know / I think that...
 D - immediate! I am sure! We should do it now, please do it quickly!
 E - immediate! I am very sure! We MUST absolutelly do it now!
+G - immediate question! I ask very urgently, is this true that ... /should we ...
 
-F - asap. I suspect that...
-G - asap. I have some small doublt, but probably... / a suggestion
-H - asap. Normal information: From what I know / I think that...
-I - asap. I am sure. We should do it really soon if you can, please do it soon.
-J - asap. I am very sure! We MUST do it really soon.
+H - asap. I suspect that...
+I - asap. I have some small doublt, but probably... / a suggestion
+J - asap. Normal information: From what I know / I think that...
+K - asap. I am sure. We should do it really soon if you can, please do it soon.
+L - asap. I am very sure! We MUST do it really soon.
 
-K - normal. I suspect that...
-L - normal. I have some small doublt, but probably... / a suggestion
-M - normal. Normal information: From what I know / I think that...
-N - normal. I am sure. We should do it really at some point.
-O - normal. I am very sure! We MUST do it at some point.
+N - asap question. I ask urgently, is this true that ... /should we ...
 
-K - low-priority. I suspect that...
-L - low-priority. I have some small doublt, but probably... / a suggestion
-M - low-priority. Normal information: From what I know / I think that...
-N - low-priority. I am sure. We should do it really - one day in future.
-O - low-priority. I am very sure! We MUST do it - one day in future.
+P - normal. I suspect that...
+Q - normal. I have some small doublt, but probably... / a suggestion
+R - normal. Normal information: From what I know / I think that...
+S - normal. I am sure. We should do it really at some point.
+T - normal. I am very sure! We MUST do it at some point.
 
+X - normal question. I ask, is this true that ... /should we ...
+*** so "R" is normal Report, and "X" is a question.
+
+1 - low-priority. I suspect that...
+2 - low-priority. I have some small doublt, but probably... / a suggestion
+3 - low-priority. Normal information: From what I know / I think that...
+4 - low-priority. I am sure. We should do it really - one day in future.
+5 - low-priority. I am very sure! We MUST do it - one day in future.
+1 - 
+? - low-priority question. Please tell later, is this true that ... /should we ...
 
 Tone of the text:
 A - small problems possible (a bit worried)
@@ -150,8 +181,8 @@ I - all very good :D after all / despite problems / thanks to me
 J - all very good :D, though some problem or consideration
 K - I want to offer/invite you to something 
 L - I want to offer/invite you to something very interesting :)
-M - mixed (good and bad)
-O - yes, agreed, ready
+M - mixed (good and bad) <--------------
+o - yes, agreed, ready
 P - no, not ready, disagreed
 R - no, not ready, disagreed - sorry/appologize
 S - no, not ready, disagreed - maybe letter
