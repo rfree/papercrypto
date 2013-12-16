@@ -38,8 +38,8 @@ B is decoded clear text
 Text example:
 Text="Hello", Pad="ACDBF":
 
-"HELLO" + "ACDBF" = "HGoMT"
-"HGoMT"   - "ACDBF" = "HELLO"
+"HELLO" + "ACDBF" = "HGOMT"
+"HGOMT"   - "ACDBF" = "HELLO"
 @TODO
 
 Alphabet used has 48 characters:
