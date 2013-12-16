@@ -1,0 +1,117 @@
+
+ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:
+ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789^?!.*+-/=@$:
+
+
+ABCDEF GHIJKL MNOPQR STUVWX YZ 012345 6789^?!.*+-/=@$:
+
+
+YES.
+NO-1,2,3.
+Can not decide.
+Unknown.
+I do not understand
+I could not decode.
+
+
+=================================================================
+Tiny message: (just this 2 exists now):
+P^^ "All normal."
+F^^ "(urgent) I wait for reply."
+
+=================================================================
+Small message has 2 charactes and ^^. 
+Small message character1 means priority/certanity of message:
+P+^^ "Yes."
+Q+^^ "Yes!"
+E+^^ "(urgent) Yes, certainly!"
+K+^^ "(urgent) Yes, certainly!!!"
+F+^^ "(urgent) Do you think so?"
+
+Small message character2 can mean predefined tiny-text:
+P+^^ "Yes."
+P-^^ "No."
+P=^^ "No, but maybe later."
+P/^^ "No, sorry."
+
+Small message uses both characters:
+E/^^ "(urgent) Certainly no! sorry."
+E+^^ "(urgent) Certainly Yes!"
+H+^^ "(urgent) I gueest that: yes."
+
+=================================================================
+Normal message has 2 characters, (then should have text), and _^^ ending.
+
+P+TODAY^^^ "Yes. Today."
+P-TOO/LATE^^^ "No, sorry. Too late."
+P=ASK/ALICE?^^ "No, but maybe later. Ask Alice. Please reply."
+B=ASK/ALICE?^^ "*(urgent) No, but maybe later. I have a suggestion: Ask Alice. Please reply."
+
+Now, the 2nd character could also mean Tone of message (eg "all is good", "I am worried",
+"all is very good! :)" etc).
+
+BAASK/ALICE?^^ 
+BGASK/ALICE?^^ 
+
+
+
+3 letter codes - 1st letter + statement + ^^
+P^^ "normal message." = "All is fine / checking in"
+R^^ "normal question." = "I wait for reply from you."
+F^^ "urgent question!" = "I wait for replu from you!"
+
+1st letter means priorty; and is it statement, suggestion or question.
+P+^^ YES (normal message)
+C+^^ YES (immediate message)
+I+^^ YES (asap message)	
+
+
+2nd letter can mean simple reply if followed by ^^
+P+^^ YES.
+P/^^ NO, sorry.
+P=^^ NO, but maybe later/at other occasion.
+P-^^ NO.
+P?^^ I did not decided, I do not know.
+P:^^ I did not decided yet, but I will think more about it probably.
+P*^^ I am fine either/any way.
+P!^^ I do not understand.
+
+Other 2nd letter means there is a text message;
+Inside text message / means space, // means new line.
+^ is upper case. @ means special char e.g. national @a=ą
+
+::g@+52.51/-59.19
+::k@dfasdf
+::o@nopnopn
+::p@
+::b@
+::i@zzz = http://zzz.i2p
+::w@btc.org
+
+::ABA80:20
+::ABC80:30
+
+
+
+
+P+^^
+P-^^
+S - NO, not ready, disagreed - sorry/appologize
+T - NO, not ready, disagreed - maybe letter
+R - NO, not ready, disagreed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
