@@ -136,19 +136,19 @@ Letter 2 encodes usually how SURE you are
 urgent: [4] -1,0,1,+1 low..normal..high..immediate
 being sure/please do it/you must:  -2,-1(not so sure),0(normal),1(please),2(must),3(absolutelly!)
 
-A - immediate! I suspect that...
-B - immediate! I have some small doubt, but probably... / a suggestion   
-C - immediate! Normal information: From what I know / I think that...
-D - immediate! I am sure! We should do it now, please do it quickly!
-E - immediate! I am very sure! We MUST absolutelly do it now!
-F - immediate question! I ask very urgently, is this true that ... /should we ...
+A - emergency! I suspect that...
+B - emergency! I have some small doubt, but probably... / a suggestion   
+C - emergency! Normal information: From what I know / I think that...
+D - emergency! I am sure! We should do it now, please do it quickly!
+E - emergency! I am very sure! We MUST absolutelly do it now!
+F - emergency question! I ask very urgently, is this true that ... /should we ...
 
-G - asap. I suspect that...
-H - asap. I have some small doublt, but probably... / a suggestion
-I - asap. Normal information: From what I know / I think that...
-J - asap. I am sure. We should do it really soon if you can, please do it soon.
-K - asap. I am very sure! We MUST do it really soon.
-L - asap question. I ask urgently, is this true that ... /should we ...
+G - urgent. I suspect that...
+H - urgent. I have some small doublt, but probably... / a suggestion
+I - urgent. Normal information: From what I know / I think that...
+J - urgent. I am sure. We should do it really soon if you can, please do it soon.
+K - urgent. I am very sure! We MUST do it really soon.
+L - urgent question. I ask urgently, is this true that ... /should we ...
 
 M - normal. I suspect that...
 N - normal. I have some small doublt, but probably... / a suggestion
@@ -157,13 +157,12 @@ P - normal. I am sure. We should do it really at some point.
 Q - normal. I am very sure! We MUST do it at some point.
 R - normal question. I ask, is this true that ... /should we ...
 
-S - low-priority. I suspect that...
-T - low-priority. I have some small doublt, but probably... / a suggestion
-U 	 - low-priority. Normal information: From what I know / I think that...
-4 - low-priority. I am sure. We should do it really - one day in future.
-5 - low-priority. I am very sure! We MUST do it - one day in future.
-1 - 
-? - low-priority question. Please tell later, is this true that ... /should we ...
+S - marginal. I suspect that...
+T - marginal. I have some small doubt, but probably... / a suggestion
+U - marginal. Normal information: From what I know / I think that...
+W - marginal. I am sure. We should do it really - one day in future.
+X - marginal. I am very sure! We MUST do it - one day in future.
+Y - marginal question. Please tell later, is this true that ... /should we ...
 
 Tone of the text:
 A - small problems possible (a bit worried)
@@ -179,17 +178,6 @@ J - all very good :D, though some problem or consideration
 K - I want to offer/invite you to something 
 L - I want to offer/invite you to something very interesting :)
 M - mixed (good and bad) <--------------
-
-
-
-N (reserved)
-
-O - YES. Agreed.
-P (reserved)
-Q
-S - NO, not ready, disagreed - sorry/appologize
-T - NO, not ready, disagreed - maybe letter
-R - NO, not ready, disagreed
 W - bad situation - sorry (my/our fault) :(
 X - bad situation - angry (at you) :(
 Y - bad situation - angry (not at you) :(
@@ -199,8 +187,7 @@ Z - bad situation - :(
 3 - technical compromise 
 4 - compromise including problems with this crypto (e.g. my crypto was stolen?)
 5 - we must change communication channel/crypto
-? - I do not understand what you mean / what is the situation
-+ - I appologize / please let's agree on something
+
 
 Next letter is if speciall characeter then has meaning:
 ! - update, errata, instead of previous message:
