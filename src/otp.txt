@@ -1,9 +1,14 @@
 This is the perfect (impossible to break it without password) code.
-- can't be broken without obtaining the password, because it's one-time password, as long as the message
-- can be coded/decoded with no electronical devices, with pen and paper
-- uses special shortcuts and codes
+1) can't be broken, because it's one-time password as long as the message
+2) can be coded/decoded with no electronical devices, with pen and paper - no backdoors
+3) uses special shortcuts and codes to be short
 
+Encryption is: a+b=c. Decryption is: c-b=a. 
+a=plain text, b=password (one-time pad "password" pre-shared), c=cypher text.
 
+Alphabet(type48): ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:
+Entropy source for onetime pad: 6dice * 8dice, or 6dice*coin*coin*coin
+Encryption implementation: paper table for encode (48rows*48columns)
 
 =======================================================================
 =======================================================================
@@ -25,8 +30,8 @@ B is decoded clear text
 Text example:
 Text="Hello", Pad="ACDBF":
 
-"Hello" + "ACDBF" = ....
-.....   - "ACDBF" = "Hello"
+"HELLO" + "ACDBF" = ....
+.....   - "ACDBF" = "HELLO"
 @TODO
 
 Alphabet used has 48 characters:
