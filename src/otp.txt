@@ -233,4 +233,10 @@ R^^ - I think we should do it quickly, just awaiting your confirmation
 =^^ - please take care about it for me, do everything needed, let everyone know
 @^^ - please take care about it for me, do everything needed, let everyone know, I might have trouble communicating
 
+=======================================================================
+=======================================================================
+=== FONT ===
 
+We recommend to write insted of big chars "i" and "o" small chars because big chars are very similar with digits 1 and 0,
+and write very carefully the letter "S" and the digit "5" because we have same sytuation, there are very similar chars. 
+Remember about clearly writing chars ". - ^". 
