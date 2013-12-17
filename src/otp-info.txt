@@ -1,8 +1,6 @@
 
-ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:
+Alphabet:
 ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789^?!.*+-/=@$:
-ABCDEF GHIJKL MNOPQR STUVWX YZ 012345 6789^?!.*+-/=@$:
-
 
 The clear text usually translated to a Message. 
 In such Message we want to encode shortly following information:
@@ -87,25 +85,6 @@ Inside text message / means space, // means new line.
 ::i@zzz = http://zzz.i2p
 ::w@btc.org
 
-::ABA80:20
-::ABC80:30
-
-
-
-
-P+^^
-P-^^
-S - NO, not ready, disagreed - sorry/appologize
-T - NO, not ready, disagreed - maybe letter
-R - NO, not ready, disagreed
-
-
-=================================================================
-PRIO_CERTAIN and CONTEXT.
-Demonstration of how PRIO_CERTAIN and CONTEXT can change meaning of same text.
-Text is "I/WORK/WITH/MARK" - "I work with Mark".
-
-
 =================================================================
 TABLE_PRIO_CERTAIN
 
@@ -115,8 +94,9 @@ This is usually 2nd character - or a small-message.
 This character endodes Context, or sometimes a tiny-message.
 Context means the general tone of sentance to make you understand what message means.
 
-It can mean a small-message:
+It can mean a small-message: 
 
++ as in "P+^^" means YES.
 P+^^ YES.
 P/^^ NO, sorry.
 P=^^ NO, but maybe later/at other occasion.
@@ -128,7 +108,29 @@ P!^^ I do not understand.
 
 Or it can set context / tone of the message:
 
-TODO
+Tone of the text:
+A - small problems possible (a bit worried)
+B - I am neutral; general text; no mood specified
+C - good :)
+D - good :) thank you :)
+E - good :) after all / despite problems / thanks to me
+F - good, though some problem or consideration
+G - all very good :D
+H - all very good :D thank you :D
+I - all very good :D after all / despite problems / thanks to me
+J - all very good :D, though some problem or consideration
+K - I want to offer/invite you to something 
+L - I want to offer/invite you to something very interesting :)
+M - mixed (good and bad)
+W - bad situation - sorry (my/our fault) :(
+X - bad situation - angry (at you) :(
+Y - bad situation - angry (not at you) :(
+Z - bad situation - :(
+1 - be viggilant / watch out
+2 - tretchery by someone we (probably both) trusted
+3 - technical compromise 
+4 - compromise including problems with this crypto (e.g. my crypto was stolen?)
+5 - we must change communication channel/crypto
 
 =================================================================
 TABLE_END_CHAR

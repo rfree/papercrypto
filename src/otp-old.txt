@@ -1,8 +1,6 @@
 
 Here we describe Paper Crypto OTP (one time pad).
 
-  @TODO@
-
 This is the perfect (impossible to break it without password) encryption protocol that 
 allows 2 people to contact eachother in most secure as possible way, that:
 1) can't be broken, because it's one-time password as long as the message
@@ -163,31 +161,6 @@ U - marginal. Normal information: From what I know / I think that...
 W - marginal. I am sure. We should do it really - one day in future.
 X - marginal. I am very sure! We MUST do it - one day in future.
 Y - marginal question. Please tell later, is this true that ... /should we ...
-
-Tone of the text:
-A - small problems possible (a bit worried)
-B - I am neutral; general text; no mood specified
-C - good :)
-D - good :) thank you :)
-E - good :) after all / despite problems / thanks to me
-F - good, though some problem or consideration
-G - all very good :D
-H - all very good :D thank you :D
-I - all very good :D after all / despite problems / thanks to me
-J - all very good :D, though some problem or consideration
-K - I want to offer/invite you to something 
-L - I want to offer/invite you to something very interesting :)
-M - mixed (good and bad) <--------------
-W - bad situation - sorry (my/our fault) :(
-X - bad situation - angry (at you) :(
-Y - bad situation - angry (not at you) :(
-Z - bad situation - :(
-1 - be viggilant / watch out
-2 - tretchery by someone we (probably both) trusted
-3 - technical compromise 
-4 - compromise including problems with this crypto (e.g. my crypto was stolen?)
-5 - we must change communication channel/crypto
-
 
 Next letter is if speciall characeter then has meaning:
 ! - update, errata, instead of previous message:
