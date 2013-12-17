@@ -1,38 +1,41 @@
 
 ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:
 ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789^?!.*+-/=@$:
-
-
 ABCDEF GHIJKL MNOPQR STUVWX YZ 012345 6789^?!.*+-/=@$:
 
 
-YES.
-NO-1,2,3.
-Can not decide.
-Unknown.
-I do not understand
-I could not decode.
+The clear text usually translated to a Message. 
+In such Message we want to encode shortly following information:
+1a) message priority - is it urgent (to decode, to read)
+1b) message certanity - is it a suggesion, a statement, an order or question...
+2) message tone - is this good, are there troubles; trying to make a plan...
+3) the message text
+4) the ending form - do you await reply, or not; do you expect us to do something;
 
+There exist also tiny-message and small-messages that are shorter.
 
 =================================================================
 Tiny message: (just this 2 exists now):
-P^^ "All normal."
-F^^ "(urgent) I wait for reply."
+1 letter + 1 ending "^", eg:
+P^ "All normal."
+F^ "(urgent) I wait for reply."
 
 =================================================================
-Small message has 2 charactes and ^^. 
-Small message character1 means priority/certanity of message:
-P+^^ "Yes."
-Q+^^ "Yes!"
-E+^^ "(urgent) Yes, certainly!"
-K+^^ "(urgent) Yes, certainly!!!"
-F+^^ "(urgent) Do you think so?"
+Small message has 2 charactes and 1 ending "^":
+Small message's 1st-character means priority+certanity of message.
+P+^ "Yes."
+Q+^ "Yes!"
+E+^ "(urgent) Yes, certainly!"
+K+^ "(urgent) Yes, certainly!!!"
+F+^ "(urgent) Do you think so?"
+There are over 20 options, detailed in table TABLE_PRIO_CERTAIN below.
 
-Small message character2 can mean predefined tiny-text:
-P+^^ "Yes."
-P-^^ "No."
-P=^^ "No, but maybe later."
-P/^^ "No, sorry."
+Small message's 2nd-character can mean predefined tiny-text like +="Yes", -="No".
+P+^ "Yes."
+P-^ "No."
+P=^ "No, but maybe later."
+P/^ "No, sorry."
+all are listed in TABLE_CONTEXT
 
 Small message uses both characters:
 E/^^ "(urgent) Certainly no! sorry."
@@ -40,19 +43,20 @@ E+^^ "(urgent) Certainly Yes!"
 H+^^ "(urgent) I gueest that: yes."
 
 =================================================================
-Normal message has 2 characters, (then should have text), and _^^ ending.
+Normal message has 2 characters, (then text), and 3 ending in form "_^^".
+
+Normal message's 1st-character is same priority+certanity (TABLE_PRIO_CERTAIN).
+Normal message's 2st-character means the context of message (TABLE_CONTEXT).
+And then text follows.
+At end you have 3 ending characters: end-type character and then "^^".
+End-type characters are listed in TABLE_END_CHAR.
+
+Examples:
 
 P+TODAY^^^ "Yes. Today."
-P-TOO/LATE^^^ "No, sorry. Too late."
+P-NO/FUEL^^^ "No, sorry. No fuel."
 P=ASK/ALICE?^^ "No, but maybe later. Ask Alice. Please reply."
-B=ASK/ALICE?^^ "*(urgent) No, but maybe later. I have a suggestion: Ask Alice. Please reply."
-
-Now, the 2nd character could also mean Tone of message (eg "all is good", "I am worried",
-"all is very good! :)" etc).
-
-BAASK/ALICE?^^ 
-BGASK/ALICE?^^ 
-
+B=ASK/ALICE?^^ "*(urgent) No, but maybe later. I have a suggestion maybe: Ask Alice. Please reply."
 
 
 3 letter codes - 1st letter + statement + ^^
@@ -66,15 +70,6 @@ C+^^ YES (immediate message)
 I+^^ YES (asap message)	
 
 
-2nd letter can mean simple reply if followed by ^^
-P+^^ YES.
-P/^^ NO, sorry.
-P=^^ NO, but maybe later/at other occasion.
-P-^^ NO.
-P?^^ I did not decided, I do not know.
-P:^^ I did not decided yet, but I will think more about it probably.
-P*^^ I am fine either/any way.
-P!^^ I do not understand.
 
 Other 2nd letter means there is a text message;
 Inside text message / means space, // means new line.
@@ -101,10 +96,38 @@ T - NO, not ready, disagreed - maybe letter
 R - NO, not ready, disagreed
 
 
+=================================================================
+PRIO_CERTAIN and CONTEXT.
+Demonstration of how PRIO_CERTAIN and CONTEXT can change meaning of same text.
+Text is "I/WORK/WITH/MARK" - "I work with Mark".
 
 
+=================================================================
+TABLE_PRIO_CERTAIN
+
+=================================================================
+TABLE_CONTEXT
+This is usually 2nd character.
+This character endodes Context, or sometimes a tiny-message.
+Context means the general tone of sentance to make you understand what message means.
+In example, text
+"I WORK WITH MARK"
+can mean various things depending on how you say it:
+"I work with Mark :( (and this sucks)"
+"I work with Mark :) (and this is good)"
+"I work with Mark :D (and this is very good thing)"
+
+TABLE_CONTEXT
 
 
+P+^^ YES.
+P/^^ NO, sorry.
+P=^^ NO, but maybe later/at other occasion.
+P-^^ NO.
+P?^^ I did not decided, I do not know.
+P:^^ I did not decided yet, but I will think more about it probably.
+P*^^ I am fine either/any way.
+P!^^ I do not understand.
 
 
 

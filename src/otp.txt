@@ -9,8 +9,6 @@ allows 2 people to contact eachother in most secure as possible way, that:
 
 Encryption formula is trivial: a+b=c. Decryption is: c-b=a.
 a=plain text, b=password (one-time pad "password" pre-shared), c=cypher text.
-e.g. number "1984" with pad "0613" encodes to "1597" (add each digit
-separatelly, ignore overflows) and 1597 - 0613 = 1984.
 
 In practice we use not digits, but alphabet of e.g. 48 characters:
 
