@@ -99,6 +99,10 @@ Inside text message:
 ^@  or shorter = means special char e.g. national ^@a is ą
 ^@^ or shorter =^ means special and uppercase ^@^a is Ą 
 
+:Q__ is a 3 letter (2 char size) Q-code as in http://en.wikipedia.org/wiki/Q_code
+:___ are our own 3 letter codes (3 char size) described in TABLE_CODE 
+See also TABLE_GOOD for summary of recommended to use/know codes from above.
+
 :@...@ means special format, opened with :@ and ended with another @, as:
 :@G+52.51/-59.19@ is geoposition with lang/long
 :@O3G2UPL4PQ6KUFC4M@ in [http://?]3g2upl4pq6kufc4m.onion (which is DuckDuckGo hidden server)
@@ -184,6 +188,8 @@ R^^ - I think we should do it quickly, just awaiting your confirmation
 @^^ - please take care about it for me, do everything needed, let everyone know, I might have trouble communicating
 
 =================================================================
+EXAMPLES
+
 Begining and ending examples.
 
 Same message text can mean various things depending on how you say it.
@@ -198,4 +204,27 @@ I/WORK/WITH/MARK?^^^
 "I work with Mark :( (and this sucks)"
 "I work with Mark :) (and this is good)"
 "I work with Mark :D (and this is very good thing)"
+
+=================================================================
+TABLE_CODE
+
+List of 3 letter codes.
+
+TODO
+
+
+
+=================================================================
+TABLE_GOOD
+
+Selection of the 3 letter codes (see TABLE_CODE) that we recommend to use.
+
+From http://en.wikipedia.org/wiki/Z_code
+
+ZAL...:...: I am closing down (until...) due to.... E.g: "ZALTOMORROW:STORM:"
+ZUJ 	Stand by.
+
+
+TODO
+
 
