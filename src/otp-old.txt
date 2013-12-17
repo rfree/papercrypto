@@ -198,25 +198,6 @@ $k - KSK@ key. $B$KRND5858 means "bitcoin adddress that can be found in KSK@rnd5
 
 Ending texts, the last 3 characters at end of message (before ^^) have speciall meaning:
 
-^^^ - normal end of communication, communication channel open.
-.^^ - normal end of communication, I consider this matter closed/done.
-?^^ - please reply
-!^^ - please reply soon
-+^^ - I invite you and await your reply {business, polite}
-A^^ - if you want please do <as we discussed>, if you want contact me
-B^^ - please do <as we discussed>, awaiting your reply when you are ready
-C^^ - please! do <as we discussed>, awaiting your soon reply asap
-D^^ - if you want please do <as we discussed>, if you want contact me - I work on it too
-E^^ - please do <as we discussed>, awaiting your reply when you are ready - I work on it too
-F^^ - please! do <as we discussed>, awaiting your soon reply asap - I work on it too
-J^^ - I will continue
-K^^ - I will take care about it
-L^^ - I will take care about it all, do not worry
-M^^ - Let's together work on it
-P^^ - I can do it, awaiting your confirmation/authorization
-R^^ - I think we should do it quickly, just awaiting your confirmation
-=^^ - please take care about it for me, do everything needed, let everyone know
-@^^ - please take care about it for me, do everything needed, let everyone know, I might have trouble communicating
 
 =======================================================================
 =======================================================================
