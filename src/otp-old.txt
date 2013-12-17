@@ -1,6 +1,8 @@
 
 Here we describe Paper Crypto OTP (one time pad).
 
+  @TODO@
+
 This is the perfect (impossible to break it without password) encryption protocol that 
 allows 2 people to contact eachother in most secure as possible way, that:
 1) can't be broken, because it's one-time password as long as the message
