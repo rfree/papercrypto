@@ -1,8 +1,40 @@
+Here we describe Paper Crypto OTP (one time pad).
 
-Alphabet:
-ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789^?!.*+-/=@$:
+I. Encryption of text into cyphertext: one-time-pad.
+II. First we shorten the text with tables of common shortcuts for phrases, contexts.
+III. There is no step III: all is ready to send even over insecure channel, email, mail, sms.
 
-The clear text usually translated to a Message. 
+#############################################################################
+#############################################################################
+I. Encryption
+
+This is the *perfect* (impossible to break it without password) encryption protocol that 
+allows 2 people to contact eachother in most secure as possible way, that:
+1) can't be broken, because it's one-time password as long as the message
+2) can be coded/decoded with no electronical devices, with pen and paper - no backdoors
+
+Encryption formula is trivial: a+b=c. Decryption is: c-b=a.
+a=plain text, b=password (one-time pad "password" pre-shared), c=cypher text.
+
+In practice we use not digits, but alphabet of e.g. 48 characters:
+
+Alphabet(type48): ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:
+Entropy source for onetime pad: 6dice * 8dice, or 6dice*coin*coin*coin
+Encryption implementation: paper table for encode (48rows*48columns)
+
+#############################################################################
+#############################################################################
+II. Shortening and format of the message.
+
+You can just write text with no encoding, then we recommend to start with 
+character "=" to indicate such no-format version. Example: 
+"=URGENT!I HAVE A QUESTION.ALL IS GOOD BUT I AM CONCERNED.DO YOU HAVE FUEL LEFT
+?IF NOT THEN EITHER BUY NOW OR RETURN TO BASE, OR AT EVERY LEAST CONSERVE IT.PLEASE REPLY ASAP"
+with shortcuts it becomes:
+"PB::APFUEL::AQABUY NOW:RETURN TO BASE:CONSERVE IT!^^"
+
+Which cuts work time to decrypt message from 15 to 5 minutes.
+
 In such Message we want to encode shortly following information:
 1a) message priority - is it urgent (to decode, to read)
 1b) message certanity - is it a suggesion, a statement, an order or question...
@@ -10,10 +42,13 @@ In such Message we want to encode shortly following information:
 3) the message text
 4) the ending form - do you await reply, or not; do you expect us to do something;
 
-There exist also tiny-message and small-messages that are shorter.
+Length in characters: 1a+1b are in one char, 2 is one, 4 takes three.
+
+There exist also tiny-message and small-messages that are shorter, eg:
 
 P^ - Tiny message - "All is normal".
 P+^ - Small message "Yes."
+TODO
 
 
 =================================================================
@@ -53,37 +88,27 @@ And then text follows.
 At end you have 3 ending characters: end-type character and then "^^".
 End-type characters are listed in TABLE_END_CHAR.
 
-Examples:
+The message text is normal text of any length, you read it after your encounter 
+characters ^^, the 2 dashes mark end, and then last character before was part of the 
+3 char end marker described in TABLE_END_CHAR.
 
-P+TODAY^^^ "Yes. Today."
-P-NO/FUEL^^^ "No, sorry. No fuel."
-P=ASK/ALICE?^^ "No, but maybe later. Ask Alice. Please reply."
-B=ASK/ALICE?^^ "*(urgent) No, but maybe later. I have a suggestion maybe: Ask Alice. Please reply."
+Inside text message: 
+/   means space
+//  means new line.
+^   is upper case for the next character after it. 
+^@  or shorter = means special char e.g. national ^@a is ą
+^@^ or shorter =^ means special and uppercase ^@^a is Ą 
 
-
-3 letter codes - 1st letter + statement + ^^
-P^^ "normal message." = "All is fine / checking in"
-R^^ "normal question." = "I wait for reply from you."
-F^^ "urgent question!" = "I wait for replu from you!"
-
-1st letter means priorty; and is it statement, suggestion or question.
-P+^^ YES (normal message)
-C+^^ YES (immediate message)
-I+^^ YES (asap message)	
-
-
-
-Other 2nd letter means there is a text message;
-Inside text message / means space, // means new line.
-^ is upper case. @ means special char e.g. national @a=ą
-
-::g@+52.51/-59.19
-::k@dfasdf
-::o@nopnopn
-::p@
-::b@
-::i@zzz = http://zzz.i2p
-::w@btc.org
+:@...@ means special format, opened with :@ and ended with another @, as:
+:@G+52.51/-59.19@ is geoposition with lang/long
+:@O3G2UPL4PQ6KUFC4M@ in [http://?]3g2upl4pq6kufc4m.onion (which is DuckDuckGo hidden server)
+:@Kfoobar@ means Freenet KSK key (not secure! maybe with 15+ char but encrypt it)
+:@PABCD1234@ means PGP key with keyid ABCD1234 (we recommend last 16 characters, not just 8)
+:@Izzz@ means i2p addressa [http://?]zzz.i2p/
+:@Wdebian.org@ is a regular web-page.
+:@B...@ is a bitcoin address. Encode upper letters with ^.
+:@B:ltc:...@ is an bitcoin-like altcoin address, for LTC coin
+:@B:doge:1gsjfidfdsds@ for example, is an dogecoin address
 
 =================================================================
 TABLE_PRIO_CERTAIN

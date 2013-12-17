@@ -1,20 +1,4 @@
 
-Here we describe Paper Crypto OTP (one time pad).
-
-This is the perfect (impossible to break it without password) encryption protocol that 
-allows 2 people to contact eachother in most secure as possible way, that:
-1) can't be broken, because it's one-time password as long as the message
-2) can be coded/decoded with no electronical devices, with pen and paper - no backdoors
-3) uses special shortcuts and codes to be shorter (quicker to encode/decode)
-
-Encryption formula is trivial: a+b=c. Decryption is: c-b=a.
-a=plain text, b=password (one-time pad "password" pre-shared), c=cypher text.
-
-In practice we use not digits, but alphabet of e.g. 48 characters:
-
-Alphabet(type48): ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:
-Entropy source for onetime pad: 6dice * 8dice, or 6dice*coin*coin*coin
-Encryption implementation: paper table for encode (48rows*48columns)
 
 =======================================================================
 =======================================================================
