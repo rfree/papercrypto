@@ -37,7 +37,7 @@ class cOTP {
 
 //VARIABLES
 string cOTP::ProgramName = "Paper-Crypto";
-string cOTP::ProgramVersion = "0.1wip";
+string cOTP::ProgramVersion = "0.1.1";
 string cOTP::alpha = "ABCDEFGHiJKLMNoPQRSTUVWXYZ0123456789^?!.*+-/=@$:";
 
 void cOTP::alpha_test()
@@ -372,7 +372,9 @@ string cOTP::get_mess()
 // MAIN
 int main ()
 {
-	srand (time(NULL));
+	srand (time(NULL)); // !
+	cout << endl << "REMEMBER: WARNING: this version is totally NOT SECURE (using very weak pseudo-random) and is not tested well, this is early pre-alpha version" << endl;
+
 	cOTP encryption;
 	cout << "Welcome to " << cOTP::ProgramName << " version " << cOTP::ProgramVersion << endl;
 	encryption.menu ();
